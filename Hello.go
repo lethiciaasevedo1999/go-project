@@ -1,14 +1,21 @@
 package main
 
 import "fmt"
-import "reflect" // pacote utilizado para saber qual é o tipo da variável utilizada
 
 func main() {
-	var nome = "Lethicia" // ou nome := “Lethicia” 
-	var idade  = 25 // ou idade := 25
-	var versao  = 1.1 // ou versao := 1.2
-	fmt.Println("Olá",nome, "sua idade é:", idade, "anos")
+	nome := "Lethicia"
+	versao := 1.1 
+	fmt.Println("Olá sra", nome)
 	fmt.Println("Este programa está na versão", versao)
 
-	fmt.Println("O tipo da variável nome é:", reflect.TypeOf(nome))
+	fmt.Println("1- Iniciar Monitoramento")
+	fmt.Println("2- Exibir Logs")
+	fmt.Println("0- Sair do Programa")
+
+	var comando int
+	fmt.Scan(&comando) 
+	fmt.Println("O endereço da minha varia'vel comando é", &comando)
+	fmt.Println("O comando escolhido foi", comando)
+	//Scanf é a função para receber dados do usuário 
+	//& - serve para indicar que vai salvar na variável oque o usuário digitar
 }
