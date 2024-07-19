@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 import "os"
+import "net/http" //pacote responsável pelas requisições
 
 func main() {
 	
@@ -15,7 +16,7 @@ func main() {
 
 	switch comando {
 	case 1:
-		fmt.Println("Monitorando...")
+		iniciarMonitoramendo()
 	case 2:
 		fmt.Println("Exibindo Logs...")
 	case 0:
@@ -51,3 +52,8 @@ func leComando() int{
 	return comandoLido
 }
 
+func iniciarMonitoramendo(){
+	fmt.Println("Monitorando...")
+	site := "https://www.alura.com.br"
+	//resp, err := http.Get(site)
+}
