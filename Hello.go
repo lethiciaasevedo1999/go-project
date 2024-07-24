@@ -1,16 +1,16 @@
 package main
 
-import "fmt"
-import "os"
+import (
+	"fmt"
+	"go/printer"
+	"net/http"
+	"os"
+)
 
 func main() {
 	
-	//exibeIntroducao()
-	//exibeMenu()
-
-	nome, idade := devolveNomeEIdade()
-	fmt.Println(nome,"e tenho", idade, "anos")
-	
+	exibeIntroducao()
+	exibeMenu()
 
 	comando := leComando()
 	
@@ -34,12 +34,6 @@ func main() {
 	
 }
 
-func devolveNomeEIdade() (string, int){
-	nome := "Lethicia"
-	idade := 25
-	return nome, idade
-
-}
 
 func exibeMenu(){
 
@@ -65,6 +59,13 @@ func leComando() int{
 
 func iniciarMonitoramendo(){
 	fmt.Println("Monitorando...")
-	//site := "https://www.alura.com.br"
-	//resp, err := http.Get(site)
+	site := "https://www.alura.com.br"
+	resp, _ := http.Get(site)
+	//fmt.Println(resp)
+
+	if resp.StatusCode == 200{
+		fmt.Println("Site: ", site, "foi carregado com sucesso")
+	}else{
+		fmt.Println("Site: ", site, "está com problemas. Status Code: ", resp.StatusCode)
+	}
 }
