@@ -2,12 +2,16 @@ package main
 
 import "fmt"
 import "os"
-import "net/http" //pacote responsável pelas requisições
 
 func main() {
 	
-	exibeIntroducao()
-	exibeMenu()
+	//exibeIntroducao()
+	//exibeMenu()
+
+	nome, idade := devolveNomeEIdade()
+	fmt.Println(nome,"e tenho", idade, "anos")
+	
+
 	comando := leComando()
 	
 	//Scanf é a função para receber dados do usuário 
@@ -28,6 +32,13 @@ func main() {
 	}
 	//O switch não precisa do "break" em Go	
 	
+}
+
+func devolveNomeEIdade() (string, int){
+	nome := "Lethicia"
+	idade := 25
+	return nome, idade
+
 }
 
 func exibeMenu(){
@@ -54,6 +65,6 @@ func leComando() int{
 
 func iniciarMonitoramendo(){
 	fmt.Println("Monitorando...")
-	site := "https://www.alura.com.br"
+	//site := "https://www.alura.com.br"
 	//resp, err := http.Get(site)
 }
