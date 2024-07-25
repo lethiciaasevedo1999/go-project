@@ -1,10 +1,13 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
-	"time"
+	"strings"
+	"time" //pacote utilizado para o espaçamento de tempo para executar o looping
 )
 
 const monitoramentos = 2
@@ -104,11 +107,27 @@ func leSitesDoArquivo() []string {
 	var sites []string
 
 	arquivo, err := os.Open("sites.txt")
+	
 
 	if err != nil{
 		fmt.Println("Ocorreu um erro: ", err)
 	}
 
-	fmt.Println(arquivo)
+	
+	leitor := bufio.NewReader(arquivo)
+	for {
+		linha, err := leitor.ReadString('\n')
+		linha = strings.TrimSpace(linha)
+		
+		sites = append(sites, linha)
+
+		if err == io.EOF{
+			break
+		}
+		
+	}
+	
+	arquivo.Close()
+
 	return sites
 }
