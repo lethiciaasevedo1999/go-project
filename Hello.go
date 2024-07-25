@@ -8,11 +8,12 @@ import (
 
 func main() {
 
-	exibeIntroducao()
+	//exibeIntroducao()
 
 	for {
 
-		exibeMenu()
+		//exibeMenu()
+		exibeNomes()
 
 		comando := leComando()
 
@@ -60,7 +61,16 @@ func leComando() int {
 
 func iniciarMonitoramendo() {
 	fmt.Println("Monitorando...")
-	site := "https://random-status-code.hrokuapp.com/"
+	var sites [4]string
+	sites[0] = "https://random-status-code.herokuapp.com/"
+	sites[1] = "https://www.alura.com.br"
+	sites[2] = "https://caelum.com.br"
+
+
+
+	fmt.Println(sites)
+
+	site := "https://random-status-code.herokuapp.com/"
 	resp, _ := http.Get(site)
 	//fmt.Println(resp)
 
@@ -69,4 +79,10 @@ func iniciarMonitoramendo() {
 	} else {
 		fmt.Println("Site: ", site, "está com problemas. Status Code: ", resp.StatusCode)
 	}
+}
+
+func exibeNomes(){
+	nomes := []string{"Douglas", "Daniel", "Bernardo"}
+	nomes = append(nomes, "Lethicia")
+	fmt.Println(nomes, cap(nomes))
 }
