@@ -7,6 +7,9 @@ import (
 	"time"
 )
 
+const monitoramentos = 2
+const delay = 5
+
 func main() {
 
 	exibeIntroducao()
@@ -55,6 +58,7 @@ func leComando() int {
 	var comandoLido int
 	fmt.Scan(&comandoLido)
 	fmt.Println("O comando escolhido foi", comandoLido)
+	fmt.Println("")
 
 	return comandoLido
 }
@@ -63,12 +67,13 @@ func iniciarMonitoramendo() {
 	fmt.Println("Monitorando...")
 	sites := []string{"https://random-status-code.herokuapp.com/", "https://www.alura.com.br", "https://caelum.com.br"}
 
-	for i := 0; i < 5 ; i++{
+	for i := 0; i < monitoramentos ; i++{
 		for i, site := range sites {
 			fmt.Println("Testando site", i, ":", site)
 			testaSite(site)
 		}
-		time.Sleep(5 * time.Second)
+		time.Sleep(delay * time.Second)
+		fmt.Println("")
 	}
 
 		
