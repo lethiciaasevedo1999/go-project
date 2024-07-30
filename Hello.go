@@ -8,6 +8,7 @@ import (
 	"os"
 	"strings"
 	"time" //pacote utilizado para o espaçamento de tempo para executar o looping
+	"strconv"
 )
 
 const monitoramentos = 2
@@ -138,12 +139,15 @@ func leSitesDoArquivo() []string {
 }
 
 func registraLog(site string, status bool){
-	arquivo, err := os.OpenFile("log.txt", os.O_RDWR|os.O_CREATE, 0666)
+	arquivo, err := os.OpenFile("log.txt", os.O_RDWR|os.O_CREATE| os.O_APPEND, 0666)
 
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	fmt.Println(arquivo)
+	arquivo.WriteString(site + "- online: " + strconv.FormatBool(status) + "\n")
+	
+
+	arquivo.Close() // função para fechar o arquivo após abri-lo
 
 }
