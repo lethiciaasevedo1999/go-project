@@ -4,11 +4,12 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"time" //pacote utilizado para o espaçamento de tempo para executar o looping
-	"strconv"
 )
 
 const monitoramentos = 2
@@ -36,6 +37,7 @@ func main() {
 			iniciarMonitoramendo()
 		case 2:
 			fmt.Println("Exibindo Logs...")
+			imprimeLogs()
 		case 0:
 			fmt.Println("Saindo do programa...")
 			os.Exit(0)
@@ -149,5 +151,18 @@ func registraLog(site string, status bool){
 	
 
 	arquivo.Close() // função para fechar o arquivo após abri-lo
+
+}
+
+func imprimeLogs(){
+
+	arquivo, err := ioutil.ReadFile("log.txt")
+
+	if err != nil{
+		fmt.Println()
+	}
+
+	fmt.Println(string(arquivo))
+
 
 }
