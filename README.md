@@ -14,6 +14,6 @@ _Caso queira testar a atividade praticada neste repositório, basta apenas:_
 
 [Documentação da linguagem Go](https://go.dev/)
 
-<img src="/images/gopher.png" alt="Gopher" style="width:200px;">
+<img src="/images/gopher-removebg-preview.png" alt="Gopher" style="width:200px;">
 
 _O programa estará sujeito a implementações e alterações a qualquer momento._
