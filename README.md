@@ -1,4 +1,4 @@
-## Análise de status do site com Go 
+## Monitoramento Automático de Status de Sites com Go
 
 <p align="center">
   <img src="/images/gopher-removebg-preview.png" alt="Gopher" style="width:250px;">
