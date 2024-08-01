@@ -1,5 +1,9 @@
 ## Análise de status do site com Go 
 
+<p align="center">
+  <img src="/images/gopher-removebg-preview.png" alt="Gopher" style="width:250px;">
+</p>
+
 ### Descrição do Projeto
 
 Este repositório foi criado para um projeto com base no curso de Go da plataforma Alura. O objetivo é desenvolver um algoritmo que verifica automaticamente o status de funcionamento de um site, realizando os testes em sequência e com intervalos de tempo entre cada verificação.
@@ -14,6 +18,6 @@ _Caso queira testar a atividade praticada neste repositório, basta apenas:_
 
 [Documentação da linguagem Go](https://go.dev/)
 
-<img src="/images/gopher-removebg-preview.png" alt="Gopher" style="width:200px;">
+
 
 _O programa estará sujeito a implementações e alterações a qualquer momento._
